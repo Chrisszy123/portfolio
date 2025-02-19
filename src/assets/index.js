@@ -29,6 +29,9 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import nftengine from './nftengine.png'
+import airdrop from './airdrop.png'
+import missions from './missions.png'
 
 export {
   logo,
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  nftengine,
+  airdrop,
+  missions
 };
