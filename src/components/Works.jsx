@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -10,23 +11,34 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
   index,
+  id,
   name,
   description,
   tags,
   image,
   source_code_link,
 }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (e) => {
+    // Don't navigate if clicking on the GitHub icon
+    if (e.target.closest('.github-link')) {
+      return;
+    }
+    navigate(`/project/${id}`);
+  };
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} onClick={handleCardClick}>
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full cursor-pointer'
       >
-        <div className='relative w-full h-[230px]'>
+        <div className='relative w-full h-[230px]' >
           <img
             src={image}
             alt='project_image'
@@ -35,8 +47,11 @@ const ProjectCard = ({
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
             <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(source_code_link, "_blank");
+              }}
+              className='github-link black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer z-10'
             >
               <img
                 src={github}
@@ -87,10 +102,10 @@ const Works = () => {
           and manage projects effectively.
         </motion.p>
       </div>
-
+ 
       <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={`project-${index}`} index={index} id={project.id} {...project} />
         ))}
       </div>
     </>

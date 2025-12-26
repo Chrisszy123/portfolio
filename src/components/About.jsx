@@ -47,10 +47,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Creative, detail-oriented, software engineer with over 5 years of
-        experience in software development, team leadership, and project
-        management. Adept at building and leading cross-functional teams to
-        deliver high-quality, scalable, and efficient technology solutions.
+       I’m a Senior Full-Stack Engineer building scalable SaaS and Web3 products for startups and growth-stage companies, with a focus on performance, reliability, and clean system design. I work primarily with React, Rust, Node.js, and PostgreSQL to ship production-ready software used by real users.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

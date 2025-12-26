@@ -25,7 +25,8 @@ import {
   threejs,
   nftengine,
   airdrop,
-  missions
+  missions,
+  web3idArch
 } from "../assets";
 
 export const navLinks = [
@@ -45,15 +46,15 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Frontend Engineer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "React Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Backend Engineer",
     icon: backend,
   },
   {
@@ -119,28 +120,18 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Frontend Engineer",
-    company_name: "MKDOO NFT",
-    icon: "https://monkeydoo.web.app/static/media/logo.82de36e7.png",
-    iconBg: "#E6DEDD",
-    date: "Nov 2021 - Feb 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Worked closely with the UX team to implement a responsive design and ensure a consistent user experience across all platforms",
-    ],
-  },
-  {
-    title: "Software Engineer",
-    company_name: "AlturaNFT",
-    icon: "https://media.licdn.com/dms/image/v2/D560BAQGqUARKO7PmKw/company-logo_200_200/company-logo_200_200/0/1667669166317/altura_nft_logo?e=1747872000&v=beta&t=LffWVYd8amZwHD9vFVkoghtVhWXAP4o30biOPVR_AmE",
+    title: "Software Engineering Lead(Web3)",
+    company_name: "MASQ",
+    icon: "https://framerusercontent.com/images/6AY4GvsFEJD5JiG1KXIJ5zgo4wg.png",
     iconBg: "#383E56",
-    date: "Jan 2023 - April 2023",
+    date: "Nov 2023 - Dec 2025",
     points: [
-      "Contributed to the development of a new Smart NFT system using TypeScript, React, and Node.js, resulting in a 25% increase in sales.",
-      "Developed and maintained several internal tools using TypeScript and MongoDB, improving team productivity and efficiency by 30%.",
+      "Led a team of engineers tasked with developing MASQ premium extension/Browser that resulted in over $20k in revenue within 14 days of launch",
+      "Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Built semantically structured full stack chrome extensions/mobile apps using reactjs, react native and SASS, leading to over 30% gain in revenue within 3 months..",
+      "Led code reviews and providing constructive feedback to other developers.",
     ],
   },
   {
@@ -157,16 +148,29 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer(Web3)",
-    company_name: "MASQ",
-    icon: "https://framerusercontent.com/images/6AY4GvsFEJD5JiG1KXIJ5zgo4wg.png",
+    title: "Software Engineer",
+    company_name: "AlturaNFT",
+    icon: "https://media.licdn.com/dms/image/v2/D560BAQGqUARKO7PmKw/company-logo_200_200/company-logo_200_200/0/1667669166317/altura_nft_logo?e=1747872000&v=beta&t=LffWVYd8amZwHD9vFVkoghtVhWXAP4o30biOPVR_AmE",
     iconBg: "#383E56",
-    date: "Nov 2023 - Present",
+    date: "Jan 2023 - April 2023",
     points: [
-      "Led a team of engineers tasked with developing MASQ premium extension/Browser that resulted in over $20k in revenue within 14 days of launch",
+      "Contributed to the development of a new Smart NFT system using TypeScript, React, and Node.js, resulting in a 25% increase in sales.",
+      "Developed and maintained several internal tools using TypeScript and MongoDB, improving team productivity and efficiency by 30%.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+    ],
+  },
+
+  {
+    title: "Frontend Engineer",
+    company_name: "MKDOO NFT",
+    icon: "https://monkeydoo.web.app/static/media/logo.82de36e7.png",
+    iconBg: "#E6DEDD",
+    date: "Nov 2021 - Feb 2023",
+    points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
-      "Built semantically structured full stack chrome extensions/mobile apps using reactjs, react native and SASS, leading to over 30% gain in revenue within 3 months..",
-      "Led code reviews and providing constructive feedback to other developers.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Worked closely with the UX team to implement a responsive design and ensure a consistent user experience across all platforms",
     ],
   },
  
@@ -202,6 +206,76 @@ const testimonials = [
 
 const projects = [
   {
+    id: "web3id",
+    name: "Web3ID (RBAC)",
+    description:
+      "Wallet-Native Authentication with Enterprise-Grade Authorization. Production-grade Web3 ID system bridging wallet-based identity and traditional Web2 authorization systems.",
+    tags: [
+      {
+        name: "rust",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "solidity",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "green-text-gradient",
+      },
+    ],
+    image: web3idArch,
+    source_code_link: "https://github.com/Chrisszy123/web3id",
+    narrative: `This project is a production-grade Web3 Identity & Access Management (ID) system designed to bridge the gap between wallet-based identity and traditional Web2 authorization systems. Most Web3 apps stop at "Connect Wallet", but real products need roles, permissions, session management, audit logs, and revocation. This system solves that.
+
+The core problem I identified during research and real-world product work was that wallet authentication proves ownership, not authorization. Enterprises and SaaS platforms require RBAC (Role-Based Access Control), JWTs for microservices, session revocation, and auditability. On-chain authorization checks are slow, expensive, and not compatible with most backend systems. Teams either rebuild insecure auth logic, hardcode role checks, or abandon decentralization entirely.
+
+I designed the system with clear constraints: wallet-first identity (no emails/passwords), on-chain source of truth for roles, Web2-compatible authorization (JWT), short-lived access tokens, refresh token rotation & reuse detection, session revocation, audit logs & SIEM compatibility, and scalability for microservices.
+
+The high-level architecture splits the system into clear security boundaries. The Auth Service (Node.js) handles token issuance, session management, and RBAC enforcement. A Rust Signature Verifier provides high-performance cryptographic verification. The Identity Smart Contract defines on-chain roles. An Admin Console (React) provides RBAC UI and admin operations. PostgreSQL stores sessions, refresh tokens, and audit logs. An API Gateway enforces authorization.
+
+I chose Rust for signature verification because it's CPU-intensive, security-critical, and a common attack surface. Rust provides memory safety, zero-cost abstractions, and predictable performance. This separation also reduces blast radius, allows horizontal scaling, and keeps cryptography isolated from business logic.
+
+The authentication flow is elegant: the client requests a nonce, the wallet signs the nonce, the signature is sent to the Auth Service, which delegates verification to the Rust service. The address is recovered cryptographically, on-chain roles are fetched and cached, and JWT + Refresh Token are issued. Nonce-based authentication prevents replay attacks, ensures signature freshness, and follows industry standards (SIWE-compatible).
+
+The authorization model uses on-chain roles defined in a Solidity contract: ADMIN, MODERATOR, MEMBER, with an extensible role design. This ensures transparency, tamper resistance, and DAO compatibility. Roles are cached in PostgreSQL for Web2 performance while maintaining Web3 trust guarantees. The cache refreshes on login, role updates, and expiration.
+
+Token design is security-focused. Access Tokens (JWT) are short-lived (5–15 minutes), stateless, and contain wallet address, roles, and session ID. Refresh Tokens are long-lived, stored hashed in the database, and rotated on every use with reuse detection and automatic session revocation. This prevents token theft persistence and silent compromise.
+
+Session management adds statefulness to stateless JWTs. Sessions are recorded in the database with middleware validation, allowing admin and user revocation. You can kill a single session, kill all sessions for a wallet, or force re-authentication.
+
+The Admin Console demonstrates authorization in action with member listing, role assignment, role expiration, and RBAC-protected UI actions. This proves roles are enforced end-to-end and authorization isn't theoretical.
+
+Every sensitive action is logged: nonce issuance, signature verification, token refresh, session revocation, and role changes. Logs are structured and SIEM-ready (Datadog, Loki, ELK-compatible), enabling security monitoring, incident response, and compliance readiness.
+
+This system serves real-world use cases: DAO admin dashboards with wallet-based login and on-chain governance roles, Web3 SaaS platforms with JWT auth for microservices, creator/brand marketplaces with role-based access, and hybrid Web2 + Web3 systems where existing backends keep JWTs while blockchain handles trust.
+
+This project reflects how I approach engineering: start from real problems, design for scale, and treat security as a feature — not an afterthought. This is not a demo login button. It demonstrates security engineering, system design maturity, real-world ID knowledge, and blockchain used where it adds value.`,
+    challenges: [
+      "Secure wallet authentication with cryptographic verification at scale",
+      "Token lifecycle security with refresh token rotation and reuse detection",
+      "On-chain / off-chain consistency for role management",
+      "Session revocation with stateless JWTs",
+      "Performance vs decentralization tradeoffs",
+      "Building a system that bridges Web2 and Web3 authorization models"
+    ],
+    solutions: [
+      "Separated signature verification into a high-performance Rust service for security and scalability",
+      "Implemented refresh token rotation with reuse detection and automatic session revocation",
+      "Created a role caching strategy that provides Web2 performance with Web3 trust guarantees",
+      "Added stateful session management to stateless JWTs, enabling revocation and audit trails",
+      "Designed a nonce-based authentication flow (SIWE-compatible) that prevents replay attacks",
+      "Built a modular architecture with clear security boundaries: Auth Service, Rust Verifier, Smart Contracts, and Admin Console"
+    ],
+    technologies: ["React", "TypeScript", "Node.js", "Fastify", "Rust", "Axum", "ethers-rs", "Solidity", "PostgreSQL", "Docker", "JWT"],
+    live_demo: null
+  },
+  {
+    id: "nft-engine",
     name: "NFT ENGINE",
     description:
       "Web-based platform that allows users to create, buy and sell NFTs on the blockchain. This NFT Marketplace allows you to seamless create and Trade NFTs.",
@@ -221,9 +295,33 @@ const projects = [
     ],
     image: nftengine,
     source_code_link: "https://github.com/Chrisszy123/NFTEngine",
+    narrative: `Building NFT Engine was a journey into the world of decentralized marketplaces. The project began with a simple vision: create a seamless platform where artists and collectors could interact with NFTs without the friction typically associated with blockchain technology.
+
+The challenge was significant. I needed to build a system that could handle blockchain interactions smoothly while maintaining a user-friendly interface. The integration of Web3.js was crucial, allowing users to connect their wallets and interact with smart contracts directly from the browser.
+
+One of the most rewarding aspects was implementing the minting functionality. Users could upload their artwork, set metadata, and mint NFTs with just a few clicks. The process involved careful handling of IPFS for decentralized storage, ensuring that the artwork would persist even if the platform went offline.
+
+The marketplace features required deep understanding of smart contract interactions. I implemented buy, sell, and auction mechanisms that felt as intuitive as traditional e-commerce platforms, but powered by blockchain technology. The real-time updates and transaction status tracking added a layer of transparency that traditional platforms couldn't match.
+
+Throughout development, I focused on creating an experience that would make Web3 accessible to users who might not be familiar with blockchain technology. The result is a platform that bridges the gap between traditional digital marketplaces and the decentralized future.`,
+    challenges: [
+      "Integrating Web3 wallet connections across different browsers and wallet providers",
+      "Handling gas fees and transaction confirmations in a user-friendly way",
+      "Implementing real-time updates for marketplace listings and transactions",
+      "Optimizing IPFS storage and retrieval for fast image loading"
+    ],
+    solutions: [
+      "Created a unified wallet connection interface supporting MetaMask, WalletConnect, and other popular wallets",
+      "Implemented gas estimation and user-friendly transaction status indicators",
+      "Used WebSocket connections and event listeners for real-time blockchain updates",
+      "Leveraged IPFS pinning services and CDN caching for optimal performance"
+    ],
+    technologies: ["React", "Web3.js", "Solidity", "IPFS", "Tailwind CSS", "Ethers.js"],
+    live_demo: null
   },
   {
-    name: " AIRDROP FAUCET",
+    id: "airdrop-faucet",
+    name: "AIRDROP FAUCET",
     description:
       "API utilizes Solidity batch transfers, you can automatically airdrop your users for completing tasks using this api, it supports EVM compatible tokens.",
     tags: [
@@ -242,8 +340,34 @@ const projects = [
     ],
     image: airdrop,
     source_code_link: "https://github.com/Chrisszy123/airdrop-api",
+    narrative: `The Airdrop Faucet API project emerged from a real-world need I encountered while working with crypto projects. Many projects wanted to reward their community members, but the process of manually sending tokens to hundreds or thousands of addresses was both time-consuming and expensive due to gas fees.
+
+I set out to build a solution that would automate this process efficiently. The core innovation was using Solidity's batch transfer functionality, which allows multiple token transfers in a single transaction. This dramatically reduced gas costs compared to individual transactions.
+
+The API design focused on flexibility and security. Projects could configure their airdrop campaigns, specify recipient addresses and amounts, and execute batch transfers with a single API call. The system handled all the complexity of smart contract interactions behind the scenes.
+
+Security was paramount. I implemented robust validation, rate limiting, and authentication mechanisms to ensure that only authorized projects could use the service. The API also included comprehensive error handling and transaction status tracking.
+
+One of the most interesting challenges was optimizing the batch size. Too many recipients in a single transaction could exceed gas limits, while too few would increase costs. I developed an algorithm that dynamically calculates optimal batch sizes based on current network conditions.
+
+The result is a production-ready API that has processed thousands of airdrops, saving projects significant time and money while enabling new community engagement strategies.`,
+    challenges: [
+      "Optimizing gas costs for large-scale airdrops",
+      "Handling transaction failures and retries gracefully",
+      "Ensuring security and preventing unauthorized access",
+      "Managing batch sizes to stay within gas limits"
+    ],
+    solutions: [
+      "Implemented batch transfer smart contracts that combine multiple transfers into single transactions",
+      "Created a robust retry mechanism with exponential backoff for failed transactions",
+      "Built comprehensive authentication and rate limiting systems",
+      "Developed dynamic batch sizing algorithms based on network conditions"
+    ],
+    technologies: ["Node.js", "Express", "Solidity", "Ethers.js", "PostgreSQL", "REST API"],
+    live_demo: null
   },
   {
+    id: "missions",
     name: "MISSIONS",
     description:
       "crypto projects can create communities with unique quests, where members of their communities can join the quest and are rewarded on completions of quests.",
@@ -267,7 +391,36 @@ const projects = [
     ],
     image: missions,
     source_code_link: "https://github.com/Chrisszy123/missions",
+    narrative: `Missions represents one of my most ambitious projects, combining community engagement, gamification, and blockchain rewards into a cohesive platform. The idea came from observing how crypto projects struggled to build and maintain engaged communities.
+
+The platform allows projects to create quest-based communities where members complete tasks to earn rewards. Each quest can have multiple steps, verification requirements, and custom reward structures. The challenge was building a system flexible enough to handle diverse quest types while remaining intuitive for both project creators and community members.
+
+I chose Next.js for its server-side rendering capabilities, which were crucial for SEO and performance. The platform needed to handle real-time updates as users completed quests, verified their progress, and claimed rewards. This required careful state management and WebSocket integration.
+
+The quest verification system was particularly complex. Different quest types required different verification methods - some needed social media proof, others required on-chain transactions, and some needed manual review. I built a modular verification system that could handle all these cases.
+
+Blockchain integration was seamless. When users completed quests, they could claim rewards directly to their wallets. The smart contract integration ensured that rewards were distributed automatically and transparently, building trust between projects and their communities.
+
+The user experience was paramount. I designed intuitive interfaces for quest creation, progress tracking, and reward claiming. The platform includes analytics dashboards for projects to understand community engagement and optimize their quest strategies.
+
+Working on Missions taught me a lot about building platforms that serve multiple user types with different needs. The balance between flexibility and simplicity was key to the project's success.`,
+    challenges: [
+      "Building a flexible quest system that supports diverse verification methods",
+      "Handling real-time updates for quest progress and rewards",
+      "Ensuring secure and transparent reward distribution",
+      "Creating intuitive interfaces for both project creators and community members"
+    ],
+    solutions: [
+      "Designed a modular quest system with pluggable verification modules",
+      "Implemented WebSocket connections and optimistic UI updates for real-time feedback",
+      "Built smart contracts for automated, transparent reward distribution",
+      "Created separate, role-appropriate interfaces with comprehensive onboarding flows"
+    ],
+    technologies: ["Next.js", "PostgreSQL", "Ethers.js", "WebSockets", "Solidity", "Tailwind CSS"],
+    live_demo: null
   },
+ 
 ];
+
 
 export { services, technologies, experiences, testimonials, projects };

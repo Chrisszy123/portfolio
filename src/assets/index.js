@@ -32,6 +32,8 @@ import tripguide from "./tripguide.png";
 import nftengine from './nftengine.png'
 import airdrop from './airdrop.png'
 import missions from './missions.png'
+import web3idArch from './web3id_arch.png'
+import web3idAuthFlow from './web3id_auth_flow.png'
 
 export {
   logo,
@@ -64,5 +66,7 @@ export {
   tripguide,
   nftengine,
   airdrop,
-  missions
+  missions,
+  web3idArch,
+  web3idAuthFlow
 };
