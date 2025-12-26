@@ -27,6 +27,13 @@ const Contact = () => {
       [name]: value,
     });
   };
+  const keys = {
+    service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    public_key: import.meta.env.VITE_EMAILJS_PUBLIC,
+  }
+
+  console.log(keys);
 
   const handleSubmit = (e) => {
     e.preventDefault();
